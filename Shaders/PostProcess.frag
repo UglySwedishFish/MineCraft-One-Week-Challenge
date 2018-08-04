@@ -36,7 +36,7 @@ vec3 brightnessContrast(vec3 value, float brightness, float contrast)
 
 vec3 gammaCorrect(vec3 value, float param)
 {
-    return vec3(pow(abs(value.r), param),pow(abs(value.g), param),pow(abs(value.b), param));
+    return pow(abs(value), vec3(param)); 
 }
 
 vec3 rgb2hsv(vec3 c)
@@ -130,6 +130,6 @@ void main()
 	result.g = result.g * (1.0f + colorBoost) - (result.r * colorBoost / 2.0f) - (result.b * colorBoost / 2.0f);
 	result.b = result.b * (1.0f + colorBoost) - (result.r * colorBoost / 2.0f) - (result.g * colorBoost / 2.0f);
     
-
+	
 	outColour = result;
 }
