@@ -26,6 +26,7 @@ QuadRenderer::QuadRenderer()
         0, 1, 2,
         2, 3, 0
     }});
+    add(vec3(-1.f)); 
 }
 
 void QuadRenderer::add(const glm::vec3& position)
@@ -41,11 +42,6 @@ void QuadRenderer::render(const Camera& camera, Config* conf)
     }
 
     m_shader.useProgram();
-    m_shader.loadGamma(conf->gamma);
-    m_shader.loadContrast(conf->contrast);
-    m_shader.loadBrightness(conf->brightness);
-    m_shader.loadPostProcess(conf->postProcess);
-    m_shader.loadResolution(glm::vec2(conf->windowX, conf->windowY));
 
     m_quadModel.bindVAO();
     //m_basicTexture.bindTexture();
