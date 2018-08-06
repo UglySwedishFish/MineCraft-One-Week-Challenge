@@ -18,7 +18,7 @@ vec3 brightnessContrast(vec3 value, float brightness, float contrast)
 
 vec3 gammaCorrect(vec3 value, float param)
 {
-    return vec3(pow(abs(value.r), param),pow(abs(value.g), param),pow(abs(value.b), param));
+    return pow(value, vec3(param));
 }
 
 #define FXAA_REDUCE_MIN (1.0/128.0)
