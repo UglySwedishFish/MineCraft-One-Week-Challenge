@@ -14,7 +14,7 @@ vec4 color;
 
 vec3 gamma(vec3 value, float param)
 {
-    return vec3(pow(abs(value.r), param),pow(abs(value.g), param),pow(abs(value.b), param));
+    return pow(value, vec3(param));
 }
 
 
